@@ -73,9 +73,9 @@ fi
 
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
-        yum install wget curl tar -y
+        yum install wget curl tar ifconfig -y
     else
-        apt install wget curl tar -y
+        apt install wget curl tar ifconfig -y
     fi
 }
 
@@ -175,6 +175,7 @@ install_x-ui() {
     echo -e "x-ui install      - Install   x-ui "
     echo -e "x-ui uninstall    - Uninstall x-ui "
     echo -e "x-ui geo          - Update    geo  data"
+    echo -e "x-ui license      - Set       license"
     echo -e "----------------------------------------------"
 }
 

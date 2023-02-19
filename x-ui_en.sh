@@ -399,6 +399,23 @@ check_xray_status() {
     fi
 }
 
+set_license() {
+    LOGI "will stop x-ui first,waiting..."
+    systemctl stop x-ui
+    local license=""
+    read -p "please input license code here": license
+    if [[ ${license} == "" ]]; then
+        LOGE "invalid license,please check it"
+        show_menu
+    else
+        LOGI "your license code is:${license},setting..."
+        /usr/local/x-ui/x-ui setting -licenseCode ${license}
+    fi
+    LOGI "restart stop x-ui now,waiting..."
+    systemctl restart x-ui
+    show_menu
+}
+
 show_xray_status() {
     check_xray_status
     if [[ $? == 0 ]]; then
@@ -662,6 +679,7 @@ show_menu() {
 ————————————————
   ${green}15.${plain} enable bbr 
   ${green}16.${plain} issuse certs
+  ${green}17.${plain} set license
  "
     show_status
     echo && read -p "please input a legal number[0-16],input 7 for checking login info:" num
@@ -718,6 +736,9 @@ show_menu() {
     16)
         ssl_cert_issue
         ;;
+    17)
+        check_install && set_license
+        ;;
     *)
         LOGE "please input a legal number[0-16],input 7 for checking login info"
         ;;
@@ -758,6 +779,9 @@ if [[ $# > 0 ]]; then
         ;;
     "uninstall")
         check_install 0 && uninstall 0
+        ;;
+    "license")
+        check_install 0 && set_license
         ;;
     *) show_usage ;;
     esac
