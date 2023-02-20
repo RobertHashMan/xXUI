@@ -1,5 +1,5 @@
 # x-ui
-[中文](./README.md)| English  
+[中文](./README_.md)| English  
 X-UI is a webUI pannel based on Xray-core which supports multi protocols and multi users  
 # installation
 Make sure your system `bash` and `curl` and `network` are ready,here we go
