@@ -1,5 +1,5 @@
 # x-ui
-中文|[English](./README_ZH.md)  
+中文|[English](./README.md)  
 支持多协议多用户的 xray 面板   
 # 安装
 在安装前请确保你的系统支持`bash`和`curl`,且系统网络正常  
