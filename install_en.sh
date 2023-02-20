@@ -73,9 +73,9 @@ fi
 
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
-        yum install wget curl tar ifconfig -y
+        yum install wget curl tar net-tools -y
     else
-        apt install wget curl tar ifconfig -y
+        apt install wget curl tar net-tools -y
     fi
 }
 
