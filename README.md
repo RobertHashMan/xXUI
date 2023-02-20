@@ -5,7 +5,7 @@ X-UI is a webUI pannel based on Xray-core which supports multi protocols and mul
 Make sure your system `bash` and `curl` and `network` are ready,here we go
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/RobertHashMan/xXUI/master/install_en.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/RobertHashMan/xXUI/main/install_en.sh)
 ```
 ## Suggested system as follows:
 - CentOS 7+
